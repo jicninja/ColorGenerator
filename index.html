@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Color Constant Generator</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <script src="./bundle.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <main>
+            <h1>Color constant generator</h1>
+            <div class="color-wrapper">
+                <label class="color-badge">
+                    <h4>Color Base</h4>
+                    <div class="color-container">
+                        <span id="baseColorRender" class="color-container__color"></span>
+                    </div>
+                    <input class="hide" type="color" id="baseColor">
+                    <input class="input-color" id="baseColorText" type="text">
+                    <ul>
+                        <li><span class="factor-label">HSL:</span> <input disabled id="baseColorHSL" value="0"/></li>
+                        <li><span class="factor-label">HEX:</span> <input disabled id="baseColorHEX" value="0"/></li>
+                        <li><span class="factor-label">RGB:</span> <input disabled id="baseColorRBG" value="50"/></li>
+                    </ul>
+                </label>
+            </div>
+
+            <div class="color-wrapper">
+                <label class="color-badge">
+                    <h4>Color Step 1</h4>
+                    <div class="color-container">
+                        <span id="stepColor1Render" class="color-container__color"></span>
+                    </div>
+                    <input disabled class="input-color" id="stepColor1Text" type="text">
+                    <ul>
+                        <li><span class="factor-label">Hue:</span> <input id="stepColor1Hue" value="0"/></li>
+                        <li><span class="factor-label">Saturation:</span> <input id="stepColor1Saturation" value="75"/></li>
+                        <li><span class="factor-label">Lightness:</span> <input id="stepColor1Lightness" value="140"/></li>
+                    </ul>
+                </label>
+            </div>
+
+            <div class="color-wrapper">
+                    <label class="color-badge">
+                        <h4>Color Step 2</h4>
+                        <div class="color-container">
+                            <span id="stepColor2Render" class="color-container__color"></span>
+                        </div>
+                        <input disabled class="input-color" id="stepColor2Text" type="text">
+                        <ul>
+                            <li><span class="factor-label">Hue:</span> <input id="stepColor2Hue" value="0"/></li>
+                            <li><span class="factor-label">Saturation:</span> <input id="stepColor2Saturation" value="50"/></li>
+                            <li><span class="factor-label">Lightness:</span> <input id="stepColor2Lightness" value="170"/></li>
+                        </ul>
+                    </label>
+                </div>
+                
+                <div class="color-wrapper">
+                        <label class="color-badge">
+                            <h4>Color Step 3</h4>
+                            <div class="color-container">
+                                <span id="stepColor3Render" class="color-container__color"></span>
+                            </div>
+                            <input disabled disabled class="input-color" id="stepColor3Text" type="text">
+                            <ul>
+                                <li><span class="factor-label">Hue:</span> <input id="stepColor3Hue" value="0"/></li>
+                                <li><span class="factor-label">Saturation:</span> <input id="stepColor3Saturation" value="5"/></li>
+                                <li><span class="factor-label">Lightness:</span> <input id="stepColor3Lightness" value="240"/></li>
+                            </ul>
+                        </label>
+                    </div>                
+        </main>
+
+        <script type="text/babel" src="./app.js"></script>
+    </body>
+</html>
