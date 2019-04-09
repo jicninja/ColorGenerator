@@ -72,7 +72,7 @@ function init () {
         });
     });
 
-    text.value = 'hsl(217,100%,39%)'; 
+    text.value = 'hsl(217,100%,19%)'; 
     const initColor = createListenerCallback(baseColorElements, true);
     steps.map((stepColor) => {
         const steps = calculateStep(stepColor, initColor);
