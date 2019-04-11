@@ -21,12 +21,12 @@
         <main>
             <h1>Color constant generator</h1>
 
-            <p>This utils a small formula to generate color fades constant with a base color constant.
-                    It allows HSB, RBG, HEX and String colors in the input.
-                    
-                    All modifications are based on HSB calculations, where Hue will be the same base color HUE + the Hue value from below.
-                    
-                    Saturation and Lightness would be a percent of the base color Saturation and Lightness.
+            <p>
+                <div>This utils a small formula to generate color fades constant with a base color constant.</div>
+                <div>It allows HSB, RBG, HEX and String colors in the input.</div>
+                <div>All modifications are based on HSB calculations, where Hue will be the same base color HUE + the Hue value from below.</div>
+                <div>Saturation and Lightness would be a percent of the base color Saturation and Lightness.</div>
+                <div>Whiteness is the percentual mixin of the base color with a white color</div>
             </p>
 
             <div class="color-wrapper">
@@ -53,9 +53,10 @@
                     </div>
                     <input disabled class="input-color" id="stepColor1Text" type="text">
                     <ul>
+                        <li><span class="factor-label">Whiteness:</span> <input id="stepColor1Whiteness" value="20"/></li>
                         <li><span class="factor-label">Hue:</span> <input id="stepColor1Hue" value="0"/></li>
-                        <li><span class="factor-label">Saturation:</span> <input id="stepColor1Saturation" value="60"/></li>
-                        <li><span class="factor-label">Lightness:</span> <input id="stepColor1Lightness" value="180"/></li>
+                        <li><span class="factor-label">Saturation:</span> <input id="stepColor1Saturation" value="100"/></li>
+                        <li><span class="factor-label">Lightness:</span> <input id="stepColor1Lightness" value="100"/></li>
                     </ul>
                 </label>
             </div>
@@ -68,9 +69,10 @@
                         </div>
                         <input disabled class="input-color" id="stepColor2Text" type="text">
                         <ul>
+                                <li><span class="factor-label">Whiteness:</span> <input id="stepColor2Whiteness" value="50"/></li>
                             <li><span class="factor-label">Hue:</span> <input id="stepColor2Hue" value="0"/></li>
-                            <li><span class="factor-label">Saturation:</span> <input id="stepColor2Saturation" value="33"/></li>
-                            <li><span class="factor-label">Lightness:</span> <input id="stepColor2Lightness" value="263"/></li>
+                            <li><span class="factor-label">Saturation:</span> <input id="stepColor2Saturation" value="100"/></li>
+                            <li><span class="factor-label">Lightness:</span> <input id="stepColor2Lightness" value="100"/></li>
                         </ul>
                     </label>
                 </div>
@@ -83,9 +85,10 @@
                             </div>
                             <input disabled disabled class="input-color" id="stepColor3Text" type="text">
                             <ul>
+                                <li><span class="factor-label">Whiteness:</span> <input id="stepColor3Whiteness" value="90"/></li>
                                 <li><span class="factor-label">Hue:</span> <input id="stepColor3Hue" value="0"/></li>
-                                <li><span class="factor-label">Saturation:</span> <input id="stepColor3Saturation" value="27"/></li>
-                                <li><span class="factor-label">Lightness:</span> <input id="stepColor3Lightness" value="480"/></li>
+                                <li><span class="factor-label">Saturation:</span> <input id="stepColor3Saturation" value="100"/></li>
+                                <li><span class="factor-label">Lightness:</span> <input id="stepColor3Lightness" value="100"/></li>
                             </ul>
                         </label>
                     </div>                

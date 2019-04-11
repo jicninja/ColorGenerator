@@ -14,6 +14,8 @@ const ColorSuperset = (id)  => {
     const hsl = document.getElementById(`${id}HSL`);
     const hex = document.getElementById(`${id}HEX`);
 
+    const whiteness = document.getElementById(`${id}Whiteness`);
+
     return {
         input,
         render,
@@ -24,18 +26,19 @@ const ColorSuperset = (id)  => {
         rgb,
         hsl,
         hex,
+        whiteness,
     };
 };
 
 const calculateStep = (step, baseColor) => {
     const stepElement = ColorSuperset(step);
-    const { hue, saturation, lightness, render, text } = stepElement;
+    const { hue, saturation, lightness, render, text, whiteness } = stepElement;
     let color = ColorHelper(baseColor);
     const HSL = color.hsl().round();
     HSL.color[0] = HSL.color[0] + Number(hue.value);
     HSL.color[1] = HSL.color[1] * Number(saturation.value / 100);
     HSL.color[2] = HSL.color[2] * Number(lightness.value / 100);
-    color = HSL;
+    color = HSL.mix(ColorHelper('white'), whiteness.value / 100);
     text.value = color.hsl().round();
     render.style = `background-color: ${color.hsl()}`;
     return { ...stepElement, color };
@@ -76,10 +79,13 @@ function init () {
     const initColor = createListenerCallback(baseColorElements, true);
     steps.map((stepColor) => {
         const steps = calculateStep(stepColor, initColor);
-        const { hue, saturation, lightness } = steps;
+        const { hue, saturation, lightness, whiteness } = steps;
+        whiteness.addEventListener('change', () => {
+            const baseColor = baseColorElements.text.value;
+            calculateStep(stepColor, baseColor);
+        });
         hue.addEventListener('change', () => {
             const baseColor = baseColorElements.text.value;
-            console.log('baseColor',baseColor);
             calculateStep(stepColor, baseColor);
         });
         saturation.addEventListener('change', () => {
