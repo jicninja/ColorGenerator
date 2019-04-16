@@ -1,5 +1,13 @@
 
 const ColorHelper = window.Color;
+const Ec1 = window.getComputedStyle(document.getElementById('error1'), null).getPropertyValue('background-color');
+const Ec2 = window.getComputedStyle(document.getElementById('error2'), null).getPropertyValue('background-color');
+const Ec3 = window.getComputedStyle(document.getElementById('error3'), null).getPropertyValue('background-color');
+
+const ColorError1 = ColorHelper(Ec1);
+const ColorError2 = ColorHelper(Ec2);
+const ColorError3 = ColorHelper(Ec3);
+
 
 const ColorSuperset = (id)  => {
     const input = document.getElementById(id);
@@ -41,6 +49,20 @@ const calculateStep = (step, baseColor) => {
     color = HSL.mix(ColorHelper('white'), whiteness.value / 100);
     text.value = color.hsl().round();
     render.style = `background-color: ${color.hsl()}`;
+
+    const contrast1 = ColorHelper(baseColor).contrast(ColorError1)
+    let error = ColorHelper('transparent'); 
+
+    if(contrast1 > 2) {
+        error = ColorError1;
+    } else if(ColorHelper(baseColor).contrast(ColorError2) > 2) {
+        error = ColorError2;
+    } else {
+        error = ColorError3;
+    }
+    document.getElementById('baseColorError').style= `background-color: ${error.hex()}`
+    
+
     return { ...stepElement, color };
 };
 
@@ -57,6 +79,9 @@ const createListenerCallback = ({input, render, text, hex, rgb, hsl }, inverse) 
 };
 
 function init () {
+
+    console.log(ColorError1);
+
     const baseColorElements = ColorSuperset('baseColor');
     const { text, input } = baseColorElements;
     const steps = ['stepColor1', 'stepColor2', 'stepColor3'];

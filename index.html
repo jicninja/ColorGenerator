@@ -29,54 +29,56 @@
                 <div>Whiteness is the percentual mixin of the base color with a white color</div>
             </p>
 
-            <div class="color-wrapper">
-                <label class="color-badge">
-                    <h4>Color Base</h4>
-                    <div class="color-container">
-                        <span id="baseColorRender" class="color-container__color"></span>
-                    </div>
-                    <input class="hide" type="color" id="baseColor">
-                    <input class="input-color" id="baseColorText" type="text">
-                    <ul>
-                        <li><span class="factor-label">HSL:</span> <input disabled id="baseColorHSL" value="0"/></li>
-                        <li><span class="factor-label">HEX:</span> <input disabled id="baseColorHEX" value="0"/></li>
-                        <li><span class="factor-label">RGB:</span> <input disabled id="baseColorRBG" value="50"/></li>
-                    </ul>
-                </label>
-            </div>
-
-            <div class="color-wrapper">
-                <label class="color-badge">
-                    <h4>Color Step 1</h4>
-                    <div class="color-container">
-                        <span id="stepColor1Render" class="color-container__color"></span>
-                    </div>
-                    <input disabled class="input-color" id="stepColor1Text" type="text">
-                    <ul>
-                        <li><span class="factor-label">Hue:</span> <input id="stepColor1Hue" value="0"/></li>
-                        <li><span class="factor-label">Saturation:</span> <input id="stepColor1Saturation" value="100"/></li>
-                        <li><span class="factor-label">Lightness:</span> <input id="stepColor1Lightness" value="100"/></li>
-                        <li><span class="factor-label">Whiteness:</span> <input id="stepColor1Whiteness" value="20"/></li>
-                    </ul>
-                </label>
-            </div>
-
-            <div class="color-wrapper">
+            <div>
+                <div class="color-wrapper">
                     <label class="color-badge">
-                        <h4>Color Step 2</h4>
+                        <h4>Color Base</h4>
                         <div class="color-container">
-                            <span id="stepColor2Render" class="color-container__color"></span>
+                            <span id="baseColorError" class="color-container__color--contrast"></span>
+                            <span id="baseColorRender" class="color-container__color"></span>
                         </div>
-                        <input disabled class="input-color" id="stepColor2Text" type="text">
+                        <input class="hide" type="color" id="baseColor">
+                        <input class="input-color" id="baseColorText" type="text">
                         <ul>
-                            <li><span class="factor-label">Hue:</span> <input id="stepColor2Hue" value="0"/></li>
-                            <li><span class="factor-label">Saturation:</span> <input id="stepColor2Saturation" value="100"/></li>
-                            <li><span class="factor-label">Lightness:</span> <input id="stepColor2Lightness" value="100"/></li>
-                            <li><span class="factor-label">Whiteness:</span> <input id="stepColor2Whiteness" value="50"/></li>
+                            <li><span class="factor-label">HSL:</span> <input disabled id="baseColorHSL" value="0"/></li>
+                            <li><span class="factor-label">HEX:</span> <input disabled id="baseColorHEX" value="0"/></li>
+                            <li><span class="factor-label">RGB:</span> <input disabled id="baseColorRBG" value="50"/></li>
                         </ul>
                     </label>
                 </div>
-                
+
+                <div class="color-wrapper">
+                    <label class="color-badge">
+                        <h4>Color Step 1</h4>
+                        <div class="color-container">
+                            <span id="stepColor1Render" class="color-container__color"></span>
+                        </div>
+                        <input disabled class="input-color" id="stepColor1Text" type="text">
+                        <ul>
+                            <li><span class="factor-label">Hue:</span> <input id="stepColor1Hue" value="0"/></li>
+                            <li><span class="factor-label">Saturation:</span> <input id="stepColor1Saturation" value="100"/></li>
+                            <li><span class="factor-label">Lightness:</span> <input id="stepColor1Lightness" value="100"/></li>
+                            <li><span class="factor-label">Whiteness:</span> <input id="stepColor1Whiteness" value="20"/></li>
+                        </ul>
+                    </label>
+                </div>
+
+                <div class="color-wrapper">
+                        <label class="color-badge">
+                            <h4>Color Step 2</h4>
+                            <div class="color-container">
+                                <span id="stepColor2Render" class="color-container__color"></span>
+                            </div>
+                            <input disabled class="input-color" id="stepColor2Text" type="text">
+                            <ul>
+                                <li><span class="factor-label">Hue:</span> <input id="stepColor2Hue" value="0"/></li>
+                                <li><span class="factor-label">Saturation:</span> <input id="stepColor2Saturation" value="100"/></li>
+                                <li><span class="factor-label">Lightness:</span> <input id="stepColor2Lightness" value="100"/></li>
+                                <li><span class="factor-label">Whiteness:</span> <input id="stepColor2Whiteness" value="50"/></li>
+                            </ul>
+                        </label>
+                </div>
+                    
                 <div class="color-wrapper">
                         <label class="color-badge">
                             <h4>Color Step 3</h4>
@@ -91,7 +93,22 @@
                                 <li><span class="factor-label">Whiteness:</span> <input id="stepColor3Whiteness" value="90"/></li>
                             </ul>
                         </label>
-                    </div>                
+                </div>
+            </div>
+            <div>
+                <div>
+                    <h6>Error UI Colors</h6>
+                    <div class="color-ui-wrapper">
+                        <div id="error1" class="color-ui color-ui__1"></div>
+                    </div>
+                    <div class="color-ui-wrapper">
+                        <div id="error2" class="color-ui color-ui__2"></div>
+                    </div>
+                    <div class="color-ui-wrapper">
+                        <div id="error3" class="color-ui color-ui__3"></div>
+                    </div>
+                </div>
+            </div>
         </main>
 
         <script type="text/babel" src="./app.js"></script>
